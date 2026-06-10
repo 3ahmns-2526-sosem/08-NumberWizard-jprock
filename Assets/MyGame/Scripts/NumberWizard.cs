@@ -19,4 +19,11 @@ public class NumberWizard : MonoBehaviour
         guess = (min + max) / 2;
         guessText.text = guess.ToString();
     }
+    
+    public void OnHigherButton()
+    {
+    min = guess + 1;
+    guess = (min + max) / 2;
+    guessText.text = guess.ToString();
+    }
 }
