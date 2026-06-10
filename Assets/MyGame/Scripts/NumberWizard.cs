@@ -6,6 +6,10 @@ public class NumberWizard : MonoBehaviour
     public int min = 1;
     public int max = 100;
     private int guess;
+    public TextMeshProUGUI winText;
+    public GameObject higherButton;
+    public GameObject lowerButton;
+    public GameObject correctButton;
 
     public TextMeshProUGUI guessText;
 
@@ -32,5 +36,13 @@ public class NumberWizard : MonoBehaviour
     max = guess - 1;
     guess = (min + max) / 2;
     guessText.text = guess.ToString();
+    }
+
+    public void OnCorrectButton()
+    {
+    winText.gameObject.SetActive(true);
+    higherButton.SetActive(false);
+    lowerButton.SetActive(false);
+    correctButton.SetActive(false);
     }
 }
