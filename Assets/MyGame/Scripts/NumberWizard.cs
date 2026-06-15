@@ -24,19 +24,23 @@ public class NumberWizard : MonoBehaviour
         guessText.text = guess.ToString();
     }
     
-    public void OnHigherButton()
-    {
+   public void OnHigherButton()
+{
+    // gesuchte Zahl ist höher → untere Grenze hochsetzen
     min = guess + 1;
+    // neuer Guess in der Mitte des verbleibenden Bereichs
     guess = (min + max) / 2;
     guessText.text = guess.ToString();
-    }
+}
 
-    public void OnLowerButton()
-    {
+public void OnLowerButton()
+{
+    // gesuchte Zahl ist niedriger → obere Grenze runtersetzen
     max = guess - 1;
+    // neuer Guess in der Mitte des verbleibenden Bereichs
     guess = (min + max) / 2;
     guessText.text = guess.ToString();
-    }
+}
 
     public void OnCorrectButton()
     {
