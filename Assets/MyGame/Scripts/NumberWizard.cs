@@ -13,12 +13,12 @@ public class NumberWizard : MonoBehaviour
     public GameObject restartButton;
     public TextMeshProUGUI guessText;
 
-    void Start()
+    private void Start()
     {
         StartGame();
     }
 
-    void StartGame()
+    private void StartGame()
     {
         guess = (min + max) / 2;
         guessText.text = guess.ToString();
