@@ -10,7 +10,7 @@ public class NumberWizard : MonoBehaviour
     public GameObject higherButton;
     public GameObject lowerButton;
     public GameObject correctButton;
-
+    public GameObject restartButton;
     public TextMeshProUGUI guessText;
 
     void Start()
@@ -48,5 +48,19 @@ public void OnLowerButton()
     higherButton.SetActive(false);
     lowerButton.SetActive(false);
     correctButton.SetActive(false);
+    restartButton.SetActive(true);
+    }
+
+    public void OnRestartButton()
+    {
+    min = 1;
+    max = 100;
+    winText.gameObject.SetActive(false);
+    higherButton.SetActive(true);
+    lowerButton.SetActive(true);
+    correctButton.SetActive(true);
+    restartButton.SetActive(false);
+    guess = (min + max) / 2;
+    guessText.text = guess.ToString();
     }
 }
